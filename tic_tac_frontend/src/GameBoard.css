@@ -1,0 +1,46 @@
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(60px, 1fr));
+  grid-template-rows: repeat(3, minmax(60px, 1fr));
+  gap: 12px;
+  background: var(--bg-secondary);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(25, 118, 210, 0.08);
+  justify-content: center;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.ttt-square {
+  background: #fff;
+  color: var(--primary, #1976D2);
+  border: 2px solid var(--border-color, #e9ecef);
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(25, 118, 210, 0.05);
+  font-size: 2.4rem;
+  font-weight: 700;
+  aspect-ratio: 1 / 1;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  cursor: pointer;
+  outline: none;
+}
+
+.ttt-square:disabled {
+  background: var(--bg-secondary, #f8f9fa);
+  color: var(--secondary, #424242);
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .ttt-board {
+    padding: 8px;
+    gap: 6px;
+    max-width: 96vw;
+  }
+  .ttt-square {
+    font-size: 2rem;
+  }
+}

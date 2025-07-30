@@ -1,12 +1,16 @@
 /* CSS Variables for Theme Management */
 :root {
+  --primary: #1976D2;
+  --secondary: #424242;
+  --accent: #FFC107;
+
   /* Light theme colors */
   --bg-primary: #ffffff;
   --bg-secondary: #f8f9fa;
   --text-primary: #282c34;
-  --text-secondary: #61dafb;
+  --text-secondary: #424242;
   --border-color: #e9ecef;
-  --button-bg: #007bff;
+  --button-bg: var(--primary, #1976D2);
   --button-text: #ffffff;
 }
 
@@ -27,6 +31,10 @@
   color: var(--text-primary);
   min-height: 100vh;
   transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .App-logo {
@@ -42,12 +50,16 @@
 
 .App-header {
   background-color: var(--bg-secondary);
-  min-height: 100vh;
+  border-radius: 0 0 20px 20px;
+  min-height: unset;
+  width: 100%;
+  max-width: 470px;
+  margin: 0 auto 18px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: flex-start;
+  font-size: 1.2rem;
   color: var(--text-primary);
   transition: background-color 0.3s ease;
   position: relative;
@@ -60,18 +72,19 @@
 
 .theme-toggle {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 16px;
+  right: 18px;
   background-color: var(--button-bg);
   color: var(--button-text);
   border: none;
   border-radius: 8px;
-  padding: 10px 20px;
+  padding: 8px 18px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(25, 118, 210, 0.10);
+  z-index: 2;
 }
 
 .theme-toggle:hover {
